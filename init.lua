@@ -1,5 +1,7 @@
 return require('packer').startup(function(use)
 
+require "core.options"
+
 use { "catppuccin/nvim", as = "catppuccin" }
 
 vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
