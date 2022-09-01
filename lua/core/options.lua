@@ -1,24 +1,30 @@
-local opt = vim.opt
+local set = vim.opt
 local g = vim.g
 
-opt.laststatus = 3 
-opt.showmode = false
+g.mapleader= ","
+
+set.laststatus = 3 
+set.showmode = false
+
+set.cursorline = true
 
 -- Indenting
-opt.expandtab = true
-opt.shiftwidth = 2
-opt.smartindent = true
-opt.tabstop = 2
-opt.softtabstop = 2
+set.expandtab = true
+set.shiftwidth = 2
+set.smartindent = true
+set.tabstop = 2
+set.softtabstop = 2
 
-opt.fillchars = { eob = " " }
-opt.ignorecase = true
-opt.smartcase = true
-opt.mouse = "a"
+set.fillchars = { eob = " " }
+set.ignorecase = true
+set.smartcase = true
+set.mouse = "a"
+
+set.history = 100
 
 -- Numbers 
-opt.number = true
-opt.numberwidth = 2
-opt.ruler = false
+set.number = true
+set.numberwidth = 2
+set.ruler = false
 
 
