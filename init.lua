@@ -19,5 +19,13 @@ use {
       "MunifTanjim/nui.nvim",
     }
   }
+  
+use {
+    'goolord/alpha-nvim',
+    config = function ()
+   	(require'plugins.configs.alpha').setup()
+    end
+}
+  
 end)
 
