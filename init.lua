@@ -2,13 +2,10 @@ return require('packer').startup(function(use)
 
 require "core.options"
 
-use { "catppuccin/nvim", as = "catppuccin" }
+use { "ellisonleao/gruvbox.nvim" }
 
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-
-require("catppuccin").setup()
-
-vim.cmd [[colorscheme catppuccin]]
+vim.o.background = "dark" 
+vim.cmd([[colorscheme gruvbox]])
 
 use {
   "nvim-neo-tree/neo-tree.nvim",
@@ -20,12 +17,13 @@ use {
     }
   }
   
-use {
-    'goolord/alpha-nvim',
-    config = function ()
-   	(require'plugins.configs.alpha').setup()
-    end
-}
+    use {
+        "goolord/alpha-nvim",
+        config = function ()
+        require('plugins.configs.alpha').setup()
+        end
+    }
+
   
 end)
 
