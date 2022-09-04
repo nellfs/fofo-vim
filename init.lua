@@ -1,29 +1,13 @@
-return require('packer').startup(function(use)
 
 require "core.options"
 
-use { "ellisonleao/gruvbox.nvim" }
+if fn.empty(fn.glob(install_path)) > 0 then
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
+  print "Cloning packer .."
+  fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
 
-vim.o.background = "dark" 
-vim.cmd([[colorscheme gruvbox]])
-
-use {
-  "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    requires = { 
-      "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    }
-  }
-  
-    use {
-        "goolord/alpha-nvim",
-        config = function ()
-        require('plugins.configs.alpha').setup()
-        end
-    }
-
-  
-end)
-
+  -- install plugins + compile their configs
+  vim.cmd "packadd packer.nvim"
+  require "plugins"
+  vim.cmd "PackerSync"
+end
