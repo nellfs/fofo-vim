@@ -1,5 +1,11 @@
+vim.defer_fn(function()
+  pcall(require, "impatient")
+end, 0)
 
 require "core.options"
+
+local fn = vim.fn
+local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
@@ -10,4 +16,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd "packadd packer.nvim"
   require "plugins"
   vim.cmd "PackerSync"
+
 end
+
+pcall(require, "custom")
