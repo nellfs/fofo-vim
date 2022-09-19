@@ -1,22 +1,9 @@
-vim.defer_fn(function()
-  pcall(require, "impatient")
-end, 0)
+require('packer').startup(function(use)
 
-require "core.options"
+use { "ellisonleao/gruvbox.nvim" }
 
-local fn = vim.fn
-local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
+end)
 
-if fn.empty(fn.glob(install_path)) > 0 then
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
-  print "Cloning packer .."
-  fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
 
-  -- install plugins + compile their configs
-  vim.cmd "packadd packer.nvim"
-  require "plugins"
-  vim.cmd "PackerSync"
-
-end
-
-pcall(require, "custom")
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
