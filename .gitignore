@@ -3,6 +3,9 @@ docs
 lua/user
 lua/packer_compiled.lua
 .git
-/.vscode
-.vscode
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
