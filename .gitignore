@@ -3,3 +3,5 @@ docs
 lua/user
 lua/packer_compiled.lua
 .git
+/.vscode
+.vscode
