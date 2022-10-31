@@ -25,8 +25,10 @@ end
 
 return packer.startup(function(use)
 	use ('wbthomason/packer.nvim')
-	use { "ellisonleao/gruvbox.nvim" }
+	use ("ellisonleao/gruvbox.nvim")
 
+  -- tmux & split window navigation
+  use ("christoomey/vim-tmux-navigator")
 
 	if packer_bootstrap then 
 	require("packer").sync()		
