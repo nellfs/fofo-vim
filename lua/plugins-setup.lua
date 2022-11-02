@@ -30,8 +30,12 @@ return packer.startup(function(use)
   -- tmux & split window navigation
   use ("christoomey/vim-tmux-navigator")
 
--- maximizes and restores current window
+  -- maximizes and restores current window
 	use("szw/vim-maximizer") 
+
+  -- essential
+  use("tpope/vim-surround")
+  use("numToStr/Comment.nvim")
 
 	if packer_bootstrap then 
 	require("packer").sync()		
