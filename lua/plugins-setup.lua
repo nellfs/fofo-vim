@@ -1,3 +1,4 @@
+  -- packer bootstrapping
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -9,33 +10,18 @@ local ensure_packer = function()
   return false
 end
 
-local packer_bootstrap = ensure_packer()
+return require('packer').startup(function(use)
+  -- packer manage itself
+  use ('wbthomason/packer.nvim')
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+  use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.1',
+  requires = { {'nvim-lua/plenary.nvim'} }
+   }
 
-local status, packer = pcall(require, "packer")
-if not status then 
-	return
-end
-
-return packer.startup(function(use)
-	use ('wbthomason/packer.nvim')
+  -- theme
 	use ("ellisonleao/gruvbox.nvim")
 
-  -- tmux & split window navigation
-  use ("christoomey/vim-tmux-navigator")
-
-  -- maximizes and restores current window
-	use("szw/vim-maximizer") 
-
-  -- essential
-  use("tpope/vim-surround")
-  use("numToStr/Comment.nvim")
 
 	if packer_bootstrap then 
 	require("packer").sync()		
