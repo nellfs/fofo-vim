@@ -1,4 +1,6 @@
 require("plugins-setup")
+require("core.treesitter")
+require("core.lsp")
 require("core.options")
 require("core.keymaps")
 require("core.colorscheme")

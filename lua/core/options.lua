@@ -1,4 +1,4 @@
-local opt = vim.opt --for conciseness 
+local opt = vim.opt --for conciseness
 
 -- line numbers
 opt.relativenumber = true
@@ -20,19 +20,13 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 
+opt.hlsearch = false
+opt.incsearch = true
+
 -- appearance
 opt.termguicolors = true
-opt.background = "dark" 
+opt.background = "dark"
 opt.signcolumn = "yes"
 
 -- backspace
 opt.backspace = "indent,eol,start"
-
--- clipboard
-opt.clipboard:append("unnamedplus") 
-
--- split windows
-opt.splitright = true
-opt.splitbelow = true
-
-opt.iskeyword:append("-")

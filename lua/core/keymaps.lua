@@ -22,4 +22,5 @@ vim.keymap.set('n', '<leader>ps', function()
     builtin.grep_string({search = vim.ft.input("Grep > ") });
 end)
 
-
+-- git
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git);
