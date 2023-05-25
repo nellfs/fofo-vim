@@ -3,7 +3,6 @@ local opt = vim.opt --for conciseness
 -- line numbers
 opt.relativenumber = true
 opt.number = true
-opt.list = true
 opt.cursorline = true
 opt.cursorcolumn = true
 
@@ -30,3 +29,4 @@ opt.signcolumn = "yes"
 
 -- backspace
 opt.backspace = "indent,eol,start"
+
