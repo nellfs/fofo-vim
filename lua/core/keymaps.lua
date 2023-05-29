@@ -3,9 +3,6 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 local builtin = require('telescope.builtin')
 
--- previous
-keymap.set("n", "pv", vim.cmd.Ex)
-
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
